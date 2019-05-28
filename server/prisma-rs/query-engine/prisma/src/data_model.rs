@@ -33,7 +33,7 @@ impl Validatable for InternalDataModelRef {
 /// Loads and builds the internal data model from the data model JSON.
 pub fn load(db_name: String) -> PrismaResult<InternalDataModelRef> {
     let data_model_json = load_string()?;
-    Ok(serde_json::from_str::<InternalDataModelTemplate>(&data_model_json)?.build(db_name))
+    Ok(dbg!(serde_json::from_str::<InternalDataModelTemplate>(&data_model_json)?.build(db_name)))
 }
 
 /// Attempts to load the config as unparsed JSON string.
